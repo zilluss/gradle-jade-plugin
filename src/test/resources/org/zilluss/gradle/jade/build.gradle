@@ -1,0 +1,2 @@
+apply plugin: project.class.classLoader.loadClass('org.zilluss.gradle.jade.JadePlugin')
+task generateHtmlTask(type: project.class.classLoader.loadClass('org.zilluss.gradle.jade.tasks.GenerateHtml'))

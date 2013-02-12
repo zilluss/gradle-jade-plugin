@@ -1,0 +1,26 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+repositories {
+  mavenCentral()
+  maven { url('https://raw.github.com/neuland/jade4j/master/releases') }
+}
+
+group='org.zilluss'
+version='1.0'
+
+dependencies {
+  groovy "org.codehaus.groovy:groovy-all:1.8.6"
+  compile gradleApi()
+  compile 'de.neuland:jade4j:0.3.8'
+  testCompile 'org.spockframework:spock-core:0.7-groovy-1.8'
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: uri('./releases'))
+    }
+  }
+}
